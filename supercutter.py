@@ -196,24 +196,23 @@ def main():
 	subtitle_dir = os.path.join(result_dir, "subtitles")
 	video_dir = os.path.join(result_dir, "videos")
 
-	if False:
-		print(f"downloading subtitle files from {args.url}...")
-		download_subtitles(args.url, subtitle_dir, args.number)
+	print(f"downloading subtitle files from {args.url}...")
+	download_subtitles(args.url, subtitle_dir, args.number)
 
-		print("searching subtitle files for the keywords:")
-		print(", ".join(keywords))
-		result = find_all_keywords(subtitle_dir, keywords)
-		with open(pickle_path, "wb") as f:
-			pickle.dump(result, f)
-		print("subtitle scan complete.")
+	print("searching subtitle files for the keywords:")
+	print(", ".join(keywords))
+	result = find_all_keywords(subtitle_dir, keywords)
+	with open(pickle_path, "wb") as f:
+		pickle.dump(result, f)
+	print("subtitle scan complete.")
 
-		print("downloading videos with keyword hits.")
-		with open(pickle_path, "rb") as f:
-			result = pickle.load(f)
-		result = download_keyword_videos(result, video_dir)
-		result = read_result_fps(result)
-		with open(pickle_path, "wb") as f:
-			pickle.dump(result, f)
+	print("downloading videos with keyword hits.")
+	with open(pickle_path, "rb") as f:
+		result = pickle.load(f)
+	result = download_keyword_videos(result, video_dir)
+	result = read_result_fps(result)
+	with open(pickle_path, "wb") as f:
+		pickle.dump(result, f)
 
 	print("generating edit description list (.edl) file.")
 	with open(pickle_path, "rb") as f:
