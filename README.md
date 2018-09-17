@@ -1,10 +1,12 @@
 # supercutter
 Tool to construct "supercut" video edits (e.g. all the f-bombs in The Big Lebowski) by scraping Youtube.
 
-Rather than analyzing the audio, this script downloads the subtitle files from Youtube.
+Rather than analyzing the audio, `supercutter` downloads the subtitle files from Youtube.
 On videos that do not have manually written subtitles, Youtube auto-generates subtitles using speech-to-text algorithms.
 These subtitles usually do a good job recognizing words, but the words are not precisely localized in time.
 This is not a big deal, because you will want to manually edit the results anyway for perfect humorous timing.
+
+`supercutter` generates an .EDL file, which is a simple, old, text file format that should be importable by almost any video editing program.
 
 `supercutter` depends heavily on the [`youtube-dl`](https://rg3.github.io/youtube-dl/) project to parse Youtube web pages and extract the video and subtitle files.
 Thanks to the `youtube-dl` developers for their awesome work!
