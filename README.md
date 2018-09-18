@@ -1,5 +1,8 @@
 # supercutter
 Tool to construct "supercut" video edits (e.g. every time [Tabasko Sweet](https://www.youtube.com/playlist?list=PLi_iu5SegOb2kvX550TRTkJopEFE1eBs4) says "family") by scraping Youtube.
+You specify a channel, playlist, etc., and a list of keywords.
+`supercutter` outputs a cut of every time a keywords appears in the specified list of videos.
+The output is in an edit list format that can be imported in your favorite video editing tool for fine-tuning.
 
 Rather than analyzing the audio, `supercutter` downloads the subtitle files from Youtube.
 On videos that do not have manually written subtitles, Youtube auto-generates subtitles using speech-to-text algorithms.
