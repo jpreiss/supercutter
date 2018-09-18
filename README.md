@@ -1,5 +1,5 @@
 # supercutter
-Tool to construct "supercut" video edits (e.g. all the f-bombs in The Big Lebowski) by scraping Youtube.
+Tool to construct "supercut" video edits (e.g. every time [Tabasko Sweet](https://www.youtube.com/playlist?list=PLi_iu5SegOb2kvX550TRTkJopEFE1eBs4) says "family") by scraping Youtube.
 
 Rather than analyzing the audio, `supercutter` downloads the subtitle files from Youtube.
 On videos that do not have manually written subtitles, Youtube auto-generates subtitles using speech-to-text algorithms.
