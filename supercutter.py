@@ -85,7 +85,6 @@ def find_all_keywords(directory: str, keywords: List[str]) -> List[Video]:
 # downloads only those videos in which keywords were found in the subtitle file.
 # returns updated Videos with vidpath set.
 def download_keyword_videos(result: List[Video], directory: str) -> List[Video]:
-	os.makedirs("videos", exist_ok=True)
 	args = [
 		"-o", os.path.join(directory, YOUTUBE_DL_FILE_FMT),
 		"--restrict-filename",
