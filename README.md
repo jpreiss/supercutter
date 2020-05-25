@@ -5,14 +5,14 @@ Tool to construct "supercut" video edits (e.g. every time [Tabasko Sweet](https:
 2. `supercutter` splices together every time a keyword appears in your videos.
 3. The output is an .EDL file that can be imported in your preferred video editor for fine-tuning.
 
-Rather than analyzing the audio, `supercutter` downloads the subtitle files from Youtube.
-On videos that do not have manually written subtitles, Youtube auto-generates subtitles using speech-to-text algorithms.
-These subtitles usually do a good job recognizing words, but the words are not precisely localized in time.
-This is not a big deal, because you will want to manually edit the results anyway for perfect humorous timing.
+Rather than analyzing audio, `supercutter` downloads subtitle files from Youtube.
+When videos do not have manually written subtitles, Youtube auto-generates them with speech-to-text algorithms.
+These subtitles usually do a good job recognizing words, but they are not precisely localized in time.
+However, this is not a big deal, because you will want to manually fine-tune the results anyway for perfect humorous timing.
 
-`supercutter` generates an .EDL file, which is a simple, old, text file format that should be importable by almost any video editing program.
+`supercutter` generates an .EDL file: a simple, old, text format that should be importable by almost any video editor.
 
-`supercutter` depends heavily on the [`youtube-dl`](https://rg3.github.io/youtube-dl/) project to parse Youtube web pages and extract the video and subtitle files.
+`supercutter` depends heavily on [`youtube-dl`](https://rg3.github.io/youtube-dl/) to parse Youtube's web pages and extract the video and subtitle files.
 Thanks to the `youtube-dl` developers for their awesome work!
 
 `supercutter` requires at least Python 3.6.
@@ -20,8 +20,8 @@ Thanks to the `youtube-dl` developers for their awesome work!
 ## Installing dependencies
 
 * [Install `youtube-dl`.](https://github.com/rg3/youtube-dl/blob/master/README.md#installation)
-* [Install `ffmpeg`.](https://ffmpeg.org/download.html) to get the `ffprobe` utility used to read frames-per-second values from video files.
-* [Install `webvtt-py`.](https://webvtt-py.readthedocs.io/en/latest/quickstart.html#installation) for parsing subtitle files.
+* [Install `ffmpeg`](https://ffmpeg.org/download.html) to get the `ffprobe` utility used to read frames-per-second values from video files.
+* [Install `webvtt-py`](https://webvtt-py.readthedocs.io/en/latest/quickstart.html#installation) for parsing subtitle files.
 
 ## Running the script
 
@@ -41,8 +41,8 @@ Thanks to the `youtube-dl` developers for their awesome work!
 
 *note: these steps are only tested in Premiere Pro CC 10.4.*
 
-* Create a new project
-* File > Import `supercut.edl`
+* Create a new project.
+* File > Import `supercut.edl`.
 * Premiere will ask "What video standard does this EDL use"? `supercutter` has printed the frames-per-second of the videos you downloaded. Make your choice based on this list.
 * Premiere asks you to pick a Sequence Preset. Currently, `supercutter` limits download resolution to 720p, so choose 720p resolution.
 * The loaded `.edl` will appear as a folder called "supercut" in your project, but all the links to the video files will be broken.
